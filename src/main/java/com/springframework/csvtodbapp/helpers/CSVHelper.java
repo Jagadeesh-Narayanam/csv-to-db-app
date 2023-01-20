@@ -17,14 +17,12 @@ import com.springframework.csvtodbapp.domain.InventoryData;
 
 public class CSVHelper {
     public static String TYPE = "text/csv";
-    static String[] HEADERs = { "code","name","batch","stock","deal","free","mrp","rate","company","supplier" };
 
     public static boolean hasCSVFormat(MultipartFile file) {
 
         if (!TYPE.equals(file.getContentType())) {
             return false;
         }
-
         return true;
     }
 

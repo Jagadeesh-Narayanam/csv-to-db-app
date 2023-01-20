@@ -2,7 +2,6 @@ package com.springframework.csvtodbapp.domain;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import java.util.Date;
 
 @Entity
