@@ -34,12 +34,10 @@ public class CSVHelper {
                      CSVFormat.DEFAULT.withFirstRecordAsHeader().withIgnoreHeaderCase().withTrim());) {
 
             List<InventoryData> inventoryDataList = new ArrayList<InventoryData>();
-            Long id=1L;
             Iterable<CSVRecord> csvRecords = csvParser.getRecords();
             for (CSVRecord csvRecord : csvRecords) {
                 InventoryData inventoryData = new InventoryData();
 
-                inventoryData.setId(id++);
                 inventoryData.setCode(csvRecord.get(0));
                 inventoryData.setName(csvRecord.get("name"));
                 inventoryData.setBatch(csvRecord.get("batch"));
@@ -56,7 +54,6 @@ public class CSVHelper {
 
                 inventoryDataList.add(inventoryData);
             }
-
             return inventoryDataList;
         } catch (IOException e) {
             throw new RuntimeException("fail to parse CSV file: " + e.getMessage());
